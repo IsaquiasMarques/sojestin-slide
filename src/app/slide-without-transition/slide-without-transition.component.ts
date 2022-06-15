@@ -9,7 +9,14 @@ export class SlideWithoutTransitionComponent implements OnInit {
 
   constructor() { }
 
+  timer: boolean = false;
+
   ngOnInit(): void {
+
+    let time = setInterval(() => {
+      this.timer = !this.timer;
+
+    }, 3000);
   }
 
 }

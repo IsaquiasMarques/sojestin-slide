@@ -47,7 +47,7 @@
     padding: 20px;
     height: 100%;
     display: grid;
-    grid-template-columns: auto 70px 70px 70px;
+    grid-template-columns: 350px 70px 70px 70px;
     column-gap: 5px;
     /* background-color: red; */
     /* width: 100%; */
@@ -100,7 +100,7 @@
     margin-left: 10px;
 } */
 .container .right .images div.im img:nth-child(1){
-    width: auto;
+    /* width: auto; */
 }
 .container .right .images div.im img:nth-child(2){
     width: 70px;

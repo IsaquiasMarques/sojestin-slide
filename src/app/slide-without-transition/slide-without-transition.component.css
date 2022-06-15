@@ -25,9 +25,18 @@
     height: 100%;
     display: inline-block;
     width: 70px;
+    transition: all .3s ease-in-out;
+}
+.right .images div.im:hover{
+    width: 200px;
+    transition: all .3s ease-in-out;
+}
+.im-main{
+    width: 350px !important;
+    transition: all .3s ease-in;
 }
 .im1{
-    width: 500px;
+    margin-left: 10px;
 }
 .im2{
     margin-left: 10px;
