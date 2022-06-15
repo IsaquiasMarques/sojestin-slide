@@ -1,0 +1,85 @@
+
+.right{
+    width: 100%;
+    height: 100%;
+    margin-top: 3rem;
+    /* background-color: yellow; */
+}
+.right .images{
+    position: relative;
+    padding: 20px;
+    height: 100%;
+    /* display: grid;
+    grid-template-columns: auto 70px 70px 70px;
+    column-gap: 5px; */
+    /* background-color: red; */
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+.right .images div.im{
+    /* padding: 100px; */
+    /* background-color: red; */
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    display: inline-block;
+    width: 70px;
+}
+.im1{
+    width: 500px;
+}
+.im2{
+    margin-left: 10px;
+}
+.im3{
+    margin-left: 10px;
+}
+.im4{
+    margin-left: 10px;
+}
+.im5{
+    margin-left: 10px;
+}
+/* .right .images img:hover{
+    width: auto;
+} */
+.right .images div.im img{
+    /* width: 70px;
+    margin-left: 10px; */
+    height: 100%;
+    object-fit: cover;
+    box-sizing: border-box;
+    transition: .3s;
+}
+/* .right .images img.pos-start{
+    width: auto;
+    flex-grow: 2;
+}
+.right .images img.pos-second{
+    width: 70px;
+    margin-left: 10px;
+}
+.right .images img.pos-third{
+    width: 70px;
+    margin-left: 10px;
+}
+.right .images img.pos-fourth{
+    width: 70px;
+    margin-left: 10px;
+} */
+.right .images div.im img:nth-child(1){
+    width: auto;
+}
+.right .images div.im img:nth-child(2){
+    width: 70px;
+    /* margin-left: 10px; */
+}
+.right .images div.im img:nth-child(3){
+    width: 70px;
+    /* margin-left: 10px; */
+}
+.right .images div.im img:nth-child(4){
+    width: 70px;
+    /* margin-left: 10px; */
+}

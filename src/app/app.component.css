@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Nuosu+SIL&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+
+.container .title h1{
+    font-family: 'Nuosu SIL', serif;
+    font-size: 3rem;
+}
+.container{
+    display: flex;
+    width: 1440px;
+    margin: 0px auto;
+    height: 560px;
+    /* background-color: orange; */
+    position: relative;
+    padding: 0px 100px;
+}
+.container2{
+    width: 1440px;
+    margin: 0px auto;
+    height: 560px;
+    /* background-color: orange; */
+    position: relative;
+    padding: 0px 100px;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+}
+.left .title{
+    margin: 2rem 0rem;
+}
+
+.left .content{
+    font-size: medium;
+    color: #2d2d2d;
+    width: 85%;
+    font-family: 'Nunito Sans', sans-serif;
+}
+.container .right{
+    width: 50%;
+    /* background-color: yellow; */
+}
+.container .right .images{
+    position: relative;
+    padding: 20px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto 70px 70px 70px;
+    column-gap: 5px;
+    /* background-color: red; */
+    /* width: 100%; */
+}
+.container .right .images div.im{
+    /* padding: 100px; */
+    /* background-color: red; */
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+/* .im1{}
+.im2{
+    margin-left: 10px;
+}
+.im3{
+    margin-left: 10px;
+}
+.im4{
+    margin-left: 10px;
+}
+.im5{
+    margin-left: 10px;
+} */
+/* .container .right .images img:hover{
+    width: auto;
+} */
+.container .right .images div.im img{
+    /* width: 70px;
+    margin-left: 10px; */
+    height: 100%;
+    object-fit: cover;
+    box-sizing: border-box;
+    transition: .3s;
+}
+/* .container .right .images img.pos-start{
+    width: auto;
+    flex-grow: 2;
+}
+.container .right .images img.pos-second{
+    width: 70px;
+    margin-left: 10px;
+}
+.container .right .images img.pos-third{
+    width: 70px;
+    margin-left: 10px;
+}
+.container .right .images img.pos-fourth{
+    width: 70px;
+    margin-left: 10px;
+} */
+.container .right .images div.im img:nth-child(1){
+    width: auto;
+}
+.container .right .images div.im img:nth-child(2){
+    width: 70px;
+    /* margin-left: 10px; */
+}
+.container .right .images div.im img:nth-child(3){
+    width: 70px;
+    /* margin-left: 10px; */
+}
+.container .right .images div.im img:nth-child(4){
+    width: 70px;
+    /* margin-left: 10px; */
+}
