@@ -27,10 +27,10 @@
     width: 70px;
     transition: all .3s ease-in-out;
 }
-.right .images div.im:hover{
+/* .right .images div.im:hover{
     width: 200px;
     transition: all .3s ease-in-out;
-}
+} */
 .im-main{
     width: 350px !important;
     transition: all .3s ease-in;

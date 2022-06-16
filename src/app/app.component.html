@@ -22,21 +22,36 @@
       <img [src]="image3" class="pos-third" alt="" srcset="">
       <img [src]="image4" class="pos-fourth" alt="" srcset=""> -->
 
-      <div *ngFor="let imgObj of this.array" [innerHTML]="imgObj.image" class="im im{{imgObj.div_position}}">
-        <!-- <img src="assets/images/image1.jpg" alt=""> -->
+      <!-- <div *ngFor="let imgObj of this.array" [ngClass]="{'im-main' : this.imgObj.isFirst}" [innerHTML]="imgObj.image" class="im im{{imgObj.div_position}}">
+        <img src="assets/images/image1.jpg" alt="">
+      </div> -->
+
+      <div id="imgs" *ngFor="let images of arrayOfImages" [innerHTML]="images.image"
+      [ngClass]="
+      {
+        'im-first' : images.position == 1,
+        'im-second' : images.position == 2,
+        'im-third' : images.position == 3,
+        'im-fourth' : images.position == 4,
+        'im-fifth' : images.position == 5
+      }"
+      class="im im1">
+        <img src="assets/images/image1.jpg" alt="">
       </div>
 
       <!-- <div *ngFor="let img of this.position" [innerHTML]="this.position">
         <img src="assets/images/image1.jpg" alt="">
       </div> -->
-
-      <!-- <div class="im im2">
+      <!-- <div class="im im1 position1">
+        <img src="assets/images/image1.jpg" alt="">
+      </div>
+      <div class="im im2 position2">
         <img src="assets/images/image2.jpg" alt="">
       </div>
-      <div class="im im3">
+      <div class="im im3 position3">
         <img src="assets/images/image3.jpg" alt="">
       </div>
-      <div class="im im4">
+      <div class="im im4 position4">
         <img src="assets/images/image4.jpg" alt="">
       </div> -->
       <!-- <div class="im im5">
@@ -53,5 +68,5 @@
 </div>
 
 <div class="container2">
-  <app-slide-without-transition></app-slide-without-transition>
+  <!-- <app-slide-without-transition></app-slide-without-transition> -->
 </div>

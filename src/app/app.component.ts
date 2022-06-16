@@ -1,4 +1,4 @@
-import { ViewEncapsulation } from '@angular/core';
+import { OnChanges, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 
 import { transition } from '@angular/animations';
@@ -12,122 +12,117 @@ import { transition } from '@angular/animations';
 
   ]
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnChanges {
   title = 'banner-practice';
-  imageSelector: number = 0;
 
-  imagesObject: any = {}
-  array: any[] = [];
+  numberOfImages: number = 4;
+  imageObject: any = {};
+  arrayOfImages: any[] = [];
 
-  // image1: string = 'assets/images/image1.jpg';
-  // img1: string = 'pos-start';
-  // image2: string = 'assets/images/image2.jpg';
-  // img2: string = 'pos-second';
-  // image3: string = 'assets/images/image3.jpg';
-  // img3: string = 'pos-third';
-  // image4: string = 'assets/images/image4.jpg';
-  // img4: string = 'pos-fourth';
+  image1: string = `<img src="assets/images/image1.jpg" alt="">`;
+  image2: string = `<img src="assets/images/image2.jpg" alt="">`;
+  image3: string = `<img src="assets/images/image3.jpg" alt="">`;
+  image4: string = `<img src="assets/images/image4.jpg" alt="">`;
+  image5: string = `<img src="assets/images/image5.jpg" alt="">`;
+  
+  isFirst: boolean = false;
 
-  currentPosition: number = 0;
-  newPosition: number = 0;
-
-  class: string = '';
-
+  getImageFirst(){
+    return this.image1;
+  }
+  getImageSecond(){
+    return this.image2;
+  }
+  getImageThird(){
+    return this.image3;
+  }
+  getImageFourth(){
+    return this.image4;
+  }
+  getImageFifth(){
+    return this.image5;
+  }
 
   ngOnInit(): void{
 
-    // console.log(this.position[0]);
+    for (let index = 1; index <= this.numberOfImages; index++) {
+      let imageVal;
+      let position;
 
-    // Pegar as Imagens
-    
-    for (let index = 1; index <= 4; index++) {
+      switch(index){
+        case 1:
+          imageVal = this.getImageFirst();
+          position = index; 
+          this.isFirst = true;
+          break;
+        case 2:
+          imageVal = this.getImageSecond();
+          position = index;
+          this.isFirst = false;
+          break;
+        case 3:
+          imageVal = this.getImageThird();
+          position = index;
+          this.isFirst = false;
+          break;
+        case 4:
+          imageVal = this.getImageFourth();
+          position = index;
+          this.isFirst = false;
+          break;
+        case 5:
+          imageVal = this.getImageFifth();
+          position = index;
+          this.isFirst = false;
+          break;
+        default:
+          break;
+      }
 
-      // let im = index + 1;
-      
-      // if(index == 1){
-      //   this.class = "first-img";
-      // }else if(index == 2){
-      //   this.class = "second-img";
-      // }else if(index == 3){
-      //   this.class = "third-img";
-      // }else if(index == 4){
-      //   this.class = "fourth-img";
-      // }
-
-      this.imagesObject = {
-        position_class: index,
-        image: `<img class='pos${index}' src='assets/images/image${index}.jpg'>`,
-        class: this.class,
+      this.imageObject = {
+        image: imageVal,
+        position: position,
+        // isFirst: this.isFirst
       };
+      this.arrayOfImages.push(this.imageObject);
 
-      this.array.push(this.imagesObject);
-      // this.array[index] = this.imagesObject;
+      // this.arrayOfImages[0] = 
 
     }
 
-    
-    // console.log(this.array);
+    // console.log(this.arrayOfImages);
 
-    let timer = setInterval(() => {
+    let interval = setInterval(() => {
 
-      this.array.forEach((data) => {
-        // console.log(`${data.position_class} => ${data.image}`);
-        
-        // console.log(`${data.position_class} => ${data.image}`);
+      // console.log(this.arrayOfImages);
+      this.arrayOfImages.forEach((data) => {
 
-        
-        data.position_class ++;
+        data.position ++;
 
-        if(data.position_class == 5){
-          data.position_class = 1;
+        if(data.position === this.numberOfImages + 1){
+
+          data.position = 1;
+
         }
 
-        // this.imagesObject = {
-        //   position_class: data.position_class,
-        //   image: data.image,
-        //   div_position: data.div_position
-        // }
-
-        // this.array = [];
-
-        // this.array.push(this.imagesObject);
-        
       });
 
-      console.log(this.array);
+      this.arrayOfImages.sort((a, b) => {
 
-      
-      this.array = this.array.sort((a, b) => {
-        return a.position_class - b.position_class
+        return a.position - b.position;
+
       });
 
-      // this.array.forEach((data2) => {
-      //   if(data2.position_class == 1){
-      //     this.class = "first-img";
-      //   }else if(data2.position_class == 2){
-      //     this.class = "second-img";
-      //   }else if(data2.position_class == 3){
-      //     this.class = "third-img";
-      //   }else if(data2.position_class == 4){
-      //     this.class = "fourth-img";
-      //   }
-      // });
+    }, 5000);
 
-      // clearInterval(timer);
+  }
 
-    }, 4000);
+  ngOnChanges(): void {
+    
+  }
 
-
-    // console.log(this.array);
-
-    // Jogar com as suas posições
-
-    // let timer = setInterval(() => {
-
-    //   this.img1 = "pos-second";
-    //   this.img2 = "pos-second";
-
-    // }, 4000);
+  public changeStatusIsFirst(){
+    return !this.isFirst;
   }
   
 }

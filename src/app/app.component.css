@@ -46,9 +46,9 @@
     position: relative;
     padding: 20px;
     height: 100%;
-    display: grid;
+    /* display: grid;
     grid-template-columns: 350px 70px 70px 70px;
-    column-gap: 5px;
+    column-gap: 5px; */
     /* background-color: red; */
     /* width: 100%; */
 }
@@ -58,20 +58,49 @@
     overflow: hidden;
     position: relative;
     height: 100%;
+    display: inline-block;
+    margin: 0px 3px;
+    transition: all 1s ease-in-out;
 }
-/* .im1{}
+.im-first > img{
+    width: 100% !important;
+    object-fit: cover !important;
+}
+.im-first{
+    width: 350px !important;
+    transition: all 1s ease-in-out;
+}
+.im-second{
+    width: 60px !important;
+    transition: all 1s ease-in-out;
+}
+.im-third{
+    width: 60px !important;
+    transition: all 1s ease-in-out;
+}
+.im-fourth{
+    width: 60px !important;
+    transition: all 1s ease-in-out;
+}
+.im-fifth{
+    width: 60px !important;
+    transition: all 1s ease-in-out;
+}
+.im1{
+    /* margin-left: 10px; */
+}
 .im2{
-    margin-left: 10px;
+    /* margin-left: 10px; */
 }
 .im3{
-    margin-left: 10px;
+    /* margin-left: 10px; */
 }
 .im4{
-    margin-left: 10px;
+    /* margin-left: 10px; */
 }
 .im5{
-    margin-left: 10px;
-} */
+    /* margin-left: 10px; */
+}
 /* .container .right .images img:hover{
     width: auto;
 } */
