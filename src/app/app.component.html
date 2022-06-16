@@ -13,19 +13,6 @@
   </div>
   <div class="right">
     <div class="images">
-      <!-- <img *ngFor="let imgObj of this.array" [src]="imgObj.image" alt=""> -->
-      
-      <!-- <ng-content *ngFor="let imgObj of this.array"></ng-content> -->
-
-      <!-- <img [src]="image1" class="pos-start" alt="" srcset="">
-      <img [src]="image2" class="pos-second" alt="" srcset="">
-      <img [src]="image3" class="pos-third" alt="" srcset="">
-      <img [src]="image4" class="pos-fourth" alt="" srcset=""> -->
-
-      <!-- <div *ngFor="let imgObj of this.array" [ngClass]="{'im-main' : this.imgObj.isFirst}" [innerHTML]="imgObj.image" class="im im{{imgObj.div_position}}">
-        <img src="assets/images/image1.jpg" alt="">
-      </div> -->
-
       <div id="imgs" *ngFor="let images of arrayOfImages" [innerHTML]="images.image"
       [ngClass]="
       {
@@ -38,35 +25,10 @@
       class="im im1">
         <img src="assets/images/image1.jpg" alt="">
       </div>
-
-      <!-- <div *ngFor="let img of this.position" [innerHTML]="this.position">
-        <img src="assets/images/image1.jpg" alt="">
-      </div> -->
-      <!-- <div class="im im1 position1">
-        <img src="assets/images/image1.jpg" alt="">
-      </div>
-      <div class="im im2 position2">
-        <img src="assets/images/image2.jpg" alt="">
-      </div>
-      <div class="im im3 position3">
-        <img src="assets/images/image3.jpg" alt="">
-      </div>
-      <div class="im im4 position4">
-        <img src="assets/images/image4.jpg" alt="">
-      </div> -->
-      <!-- <div class="im im5">
-        <img src="assets/images/image5.jpg" alt="">
-      </div> -->
-
-      <!-- <img [src]="image1" [ngClass]="img1" alt="" srcset="">
-      <img [src]="image2" [ngClass]="img2" alt="" srcset="">
-      <img [src]="image3" [ngClass]="img3" alt="" srcset="">
-      <img [src]="image4" [ngClass]="img4" alt="" srcset=""> -->
-
     </div>
   </div>
 </div>
 
-<div class="container2">
-  <!-- <app-slide-without-transition></app-slide-without-transition> -->
-</div>
+<!-- <div class="container2">
+  <app-slide-without-transition></app-slide-without-transition>
+</div> -->

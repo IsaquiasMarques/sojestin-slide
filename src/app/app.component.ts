@@ -15,7 +15,7 @@ import { transition } from '@angular/animations';
 export class AppComponent implements OnInit, OnChanges {
   title = 'banner-practice';
 
-  numberOfImages: number = 4;
+  numberOfImages: number = 5;
   imageObject: any = {};
   arrayOfImages: any[] = [];
 
@@ -92,28 +92,36 @@ export class AppComponent implements OnInit, OnChanges {
 
     // console.log(this.arrayOfImages);
 
-    let interval = setInterval(() => {
 
-      // console.log(this.arrayOfImages);
-      this.arrayOfImages.forEach((data) => {
+    // Espera 6 segundos antes do Slider comçar a rodar.
+    let waitFiveSecondsToStart = setInterval(() => {
 
-        data.position ++;
+      let interval = setInterval(() => {
 
-        if(data.position === this.numberOfImages + 1){
+        // console.log(this.arrayOfImages);
+        this.arrayOfImages.forEach((data) => {
+  
+          data.position ++;
+  
+          if(data.position === this.numberOfImages + 1){
+  
+            data.position = 1;
+  
+          }
+  
+        });
+  
+        this.arrayOfImages.sort((a, b) => {
+  
+          return a.position - b.position;
+  
+        });
+  
+      }, 4500);
 
-          data.position = 1;
+      clearInterval(waitFiveSecondsToStart);
 
-        }
-
-      });
-
-      this.arrayOfImages.sort((a, b) => {
-
-        return a.position - b.position;
-
-      });
-
-    }, 5000);
+    }, 6000);
 
   }
 
