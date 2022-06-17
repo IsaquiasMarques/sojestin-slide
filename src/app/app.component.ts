@@ -1,8 +1,6 @@
 import { OnChanges, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 
-import { transition } from '@angular/animations';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,7 +10,7 @@ import { transition } from '@angular/animations';
 
   ]
 })
-export class AppComponent implements OnInit, OnChanges {
+export class AppComponent implements OnInit {
   title = 'banner-practice';
 
   numberOfImages: number = 5;
@@ -93,44 +91,38 @@ export class AppComponent implements OnInit, OnChanges {
     // console.log(this.arrayOfImages);
 
 
-    // Espera 6 segundos antes do Slider comçar a rodar.
-    let waitFiveSecondsToStart = setInterval(() => {
+    if(this.numberOfImages > 1){
+      // Espera 6 segundos antes do Slider comçar a rodar.
+      let waitFiveSecondsToStart = setInterval(() => {
 
-      let interval = setInterval(() => {
+        let interval = setInterval(() => {
 
-        // console.log(this.arrayOfImages);
-        this.arrayOfImages.forEach((data) => {
-  
-          data.position ++;
-  
-          if(data.position === this.numberOfImages + 1){
-  
-            data.position = 1;
-  
-          }
-  
-        });
-  
-        this.arrayOfImages.sort((a, b) => {
-  
-          return a.position - b.position;
-  
-        });
-  
-      }, 4500);
-
-      clearInterval(waitFiveSecondsToStart);
-
-    }, 6000);
-
-  }
-
-  ngOnChanges(): void {
+          // console.log(this.arrayOfImages);
+          this.arrayOfImages.forEach((data) => {
     
-  }
+            data.position ++;
+    
+            if(data.position === this.numberOfImages + 1){
+    
+              data.position = 1;
+    
+            }
+    
+          });
+    
+          this.arrayOfImages.sort((a, b) => {
+    
+            return a.position - b.position;
+    
+          });
+    
+        }, 4500);
 
-  public changeStatusIsFirst(){
-    return !this.isFirst;
+        clearInterval(waitFiveSecondsToStart);
+
+      }, 5000);
+    }
+
   }
   
 }

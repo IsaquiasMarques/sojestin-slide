@@ -2,12 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
 
 :root{
-    --primary-image-slide-width: 350px;
+    --primary-image-slide-width: 500px;
     --secondaries-image-slide-width: 60px;
-    --margin-left-second-image: calc(var(--primary-image-slide-width) + 34px);
+    --margin-left-second-image: calc(var(--primary-image-slide-width) + 10px);
     --margin-left-third-image: calc(var(--margin-left-second-image) + var(--secondaries-image-slide-width) + 7px);
     --margin-left-fourth-image: calc(var(--margin-left-third-image) + var(--secondaries-image-slide-width) + 7px);
     --margin-left-fifth-image: calc(var(--margin-left-fourth-image) + var(--secondaries-image-slide-width) + 7px);
+   
+   
+    --images-container-width-one-images: calc(var(--margin-left-second-image) + 7px);
+    --images-container-width-two-images: calc(var(--margin-left-second-image) + 73px);
+    --images-container-width-three-images: calc(var(--margin-left-third-image) + 73px);
+    --images-container-width-four-images: calc(var(--margin-left-fourth-image) + 73px);
+    --images-container-width-five-images: calc(var(--margin-left-fifth-image) + 73px);
 }
 
 .container .title h1{
@@ -22,7 +29,7 @@
     justify-content: space-around;
     /* background-color: orange; */
     position: relative;
-    padding: 0px 30px;
+    padding: 20px 30px;
 }
 .container2{
     width: 1440px;
@@ -36,7 +43,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 40%;
+    width: 45%;
+    /* background-color: aqua; */
 }
 .left .title{
     margin: 2rem 0rem;
@@ -49,20 +57,54 @@
     font-family: 'Nunito Sans', sans-serif;
 }
 .container .right{
-    width: 50%;
+    width: 55%;
     /* float: right; */
     /* background-color: yellow; */
+    position: relative;
 }
+
 .container .right .images{
     position: relative;
-    padding: 20px;
+    /* padding-left: 5px; */
     height: 100%;
+    margin: 0px auto;
     /* display: grid;
     grid-template-columns: 350px 70px 70px 70px;
     column-gap: 5px; */
     /* background-color: red; */
-    /* width: 100%; */
+    overflow: hidden;
 }
+
+.container .right .images.one{
+    /* background-color: red; */
+    width: var(--images-container-width-one-images);
+    overflow: hidden;
+}
+
+.container .right .images.two{
+    /* background-color: red; */
+    width: var(--images-container-width-two-images);
+    overflow: hidden;
+}
+
+.container .right .images.three{
+    /* background-color: red; */
+    width: var(--images-container-width-three-images);
+    overflow: hidden;
+}
+
+.container .right .images.four{
+    /* background-color: red; */
+    width: var(--images-container-width-four-images);
+    overflow: hidden;
+}
+
+.container .right .images.five{
+    /* background-color: red; */
+    width: var(--images-container-width-five-images);
+    overflow: hidden;
+}
+
 .container .right .images div.im{
     /* padding: 100px; */
     /* background-color: red; */
@@ -74,20 +116,26 @@
     margin: 0px 3px;
     transition: all 1s ease-in-out;
 }
-.im-first > img{
-    width: 100% !important;
+
+.container .right .images div.im > img{
+    /* margin-left: 10px; */
+    width: var(--primary-image-slide-width) !important;
+    height: 100%;
     object-fit: cover !important;
+    box-sizing: border-box;
 }
 
 .im-first{
-    /* width: var(--primary-image-slide-width); */
-    transition: all 1.5s ease-in-out;
-    animation: transition 1.5s ease-in-out;
+    width: var(--primary-image-slide-width);
+    /* transition: all 1.5s ease-in-out; */
+    animation: transition 1s ease-in;
+    background-color: red;
+    position: relative;
 }
 
 @keyframes transition {
     from{
-        margin-left: var(--margin-left-fifth-image);
+        margin-left: calc(var(--margin-left-fifth-image) - 7px);
         /* opacity: 0; */
         width: var(--secondaries-image-slide-width) !important;
     }
@@ -101,8 +149,8 @@
 
 .im-second{
     margin-left: var(--margin-left-second-image) !important;
-    width: 60px !important;
-    transition: all 1.5s ease-in-out;
+    width: var(--secondaries-image-slide-width);
+    /* transition: all 1.5s ease-in-out; */
     /* animation: transition 1.5s ease; */
 }
 
@@ -117,17 +165,17 @@
 
 .im-third{
     margin-left: var(--margin-left-third-image) !important;
-    width: 60px !important;
+    width: var(--secondaries-image-slide-width);
     transition: all 1.5s ease-in-out;
 }
 .im-fourth{
     margin-left: var(--margin-left-fourth-image) !important;
-    width: 60px !important;
+    width: var(--secondaries-image-slide-width);
     transition: all 1.5s ease-in-out;
 }
 .im-fifth{
     margin-left: var(--margin-left-fifth-image) !important;
-    width: var(--secondaries-image-slide-width) !important;
+    width: var(--secondaries-image-slide-width);
     transition: all 1.5s ease-in-out;
 }
 
@@ -135,26 +183,3 @@
 /* .container .right .images img:hover{
     width: auto;
 } */
-.container .right .images div.im img{
-    /* width: 70px;
-    margin-left: 10px; */
-    height: 100%;
-    object-fit: cover;
-    box-sizing: border-box;
-    transition: .3s;
-}
-.container .right .images div.im img:nth-child(1){
-    /* width: auto; */
-}
-.container .right .images div.im img:nth-child(2){
-    width: 70px;
-    /* margin-left: 10px; */
-}
-.container .right .images div.im img:nth-child(3){
-    width: 70px;
-    /* margin-left: 10px; */
-}
-.container .right .images div.im img:nth-child(4){
-    width: 70px;
-    /* margin-left: 10px; */
-}

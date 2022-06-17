@@ -12,7 +12,16 @@
     </div>
   </div>
   <div class="right">
-    <div class="images">
+    <div class="images"
+      [ngClass]="
+      {
+        'one': this.numberOfImages == 1,
+        'two': this.numberOfImages == 2,
+        'three': this.numberOfImages == 3,
+        'four': this.numberOfImages == 4,
+        'five': this.numberOfImages == 5
+      }
+      ">
       <div id="imgs" *ngFor="let images of arrayOfImages" [innerHTML]="images.image"
       [ngClass]="
       {
@@ -23,7 +32,7 @@
         'im-fifth' : images.position == 5
       }"
       class="im im1">
-        <img src="assets/images/image1.jpg" alt="">
+        <!-- <img src="assets/images/image1.jpg" alt=""> -->
       </div>
     </div>
   </div>
