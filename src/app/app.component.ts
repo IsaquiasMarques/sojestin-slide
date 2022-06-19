@@ -124,5 +124,29 @@ export class AppComponent implements OnInit {
     }
 
   }
+
+  next(): void{
+
+    
+    clearInterval();
+
+    this.arrayOfImages.forEach((data) => {
+    
+      data.position ++;
+
+      if(data.position === this.numberOfImages + 1){
+        data.position = 1;
+      }
+
+    });
+
+    this.arrayOfImages.sort((a, b) => {
+      return a.position - b.position;
+    });
+
+
+  }
+
+  prev(): void{}
   
 }
