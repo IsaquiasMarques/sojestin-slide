@@ -151,7 +151,7 @@
     width: var(--primary-image-slide-width);
     /* transition: all 1.5s ease-in-out; */
     animation: transition 1s ease-in;
-    background-color: red;
+    /* background-color: red; */
     position: relative;
 }
 

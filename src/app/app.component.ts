@@ -25,6 +25,8 @@ export class AppComponent implements OnInit {
   
   isFirst: boolean = false;
 
+  interval: any;
+
   getImageFirst(){
     return this.image1;
   }
@@ -92,43 +94,30 @@ export class AppComponent implements OnInit {
 
 
     if(this.numberOfImages > 1){
-      // Espera 6 segundos antes do Slider comçar a rodar.
-      let waitFiveSecondsToStart = setInterval(() => {
+      // Espera 3.5 segundos antes do Slider comçar a rodar.
+      let waitSecondsToStart = setTimeout(() => {
 
-        let interval = setInterval(() => {
+        // this.next();
+        this.refreshSlide();
 
-          // console.log(this.arrayOfImages);
-          this.arrayOfImages.forEach((data) => {
-    
-            data.position ++;
-    
-            if(data.position === this.numberOfImages + 1){
-    
-              data.position = 1;
-    
-            }
-    
-          });
-    
-          this.arrayOfImages.sort((a, b) => {
-    
-            return a.position - b.position;
-    
-          });
-    
-        }, 4500);
+        clearTimeout(waitSecondsToStart);
 
-        clearInterval(waitFiveSecondsToStart);
-
-      }, 5000);
+      }, 3500);
     }
 
   }
 
-  next(): void{
-
+  refreshSlide(){
     
-    clearInterval();
+    this.interval = setInterval(() => {
+
+      // console.log(this.arrayOfImages);
+      this.incrementImagePosition();
+
+    }, 3000);
+  }
+
+  incrementImagePosition(){
 
     this.arrayOfImages.forEach((data) => {
     
@@ -144,9 +133,50 @@ export class AppComponent implements OnInit {
       return a.position - b.position;
     });
 
+  }
+
+  decrementImagePosition(){
+
+    this.arrayOfImages.forEach((data) => {
+    
+      data.position --;
+
+      if(data.position === 0){
+        data.position = this.numberOfImages;
+      }
+
+    });
+
+    this.arrayOfImages.sort((a, b) => {
+      return a.position - b.position;
+    });
 
   }
 
-  prev(): void{}
+
+  next(): void{
+
+    this.incrementImagePosition();
+    
+    clearInterval(this.interval);
+
+    this.refreshSlide();
+
+    // let timeout = setTimeout(() => {
+      
+    //   this.refreshSlide();
+
+    //   clearTimeout(timeout);
+    // }, 2000)
+
+  }
+
+  prev(): void{
+    this.decrementImagePosition();
+
+    clearInterval(this.interval);
+
+    this.refreshSlide();
+  }
   
 }
