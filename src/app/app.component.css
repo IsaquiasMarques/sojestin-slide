@@ -147,15 +147,85 @@
     box-sizing: border-box;
 }
 
+.container .right .images.one .im-first{
+    animation: transitionOneImage 1s ease-in;
+}
+.container .right .images.two .im-first{
+    animation: transitionTwoImages 1s ease-in;
+}
+.container .right .images.three .im-first{
+    animation: transitionThreeImages 1s ease-in;
+}
+.container .right .images.four .im-first{
+    animation: transitionFourImages 1s ease-in;
+}
+.container .right .images.five .im-first{
+    animation: transitionFiveImages 1s ease-in;
+}
+
 .im-first{
     width: var(--primary-image-slide-width);
     /* transition: all 1.5s ease-in-out; */
-    animation: transition 1s ease-in;
     /* background-color: red; */
     position: relative;
 }
 
-@keyframes transition {
+@keyframes transitionOneImage {
+    from{
+        margin-left: calc(var(--margin-left-first-image) - 7px);
+        /* opacity: 0; */
+        width: var(--secondaries-image-slide-width) !important;
+    }
+    to{
+        margin-left: 0px;
+        width: var(--primary-image-slide-width) !important;
+        /* background-color: red;
+        padding: 20px; */
+    }
+}
+@keyframes transitionTwoImages {
+    from{
+        margin-left: calc(var(--margin-left-second-image) - 7px);
+        /* opacity: 0; */
+        width: var(--secondaries-image-slide-width) !important;
+    }
+    to{
+        margin-left: 0px;
+        width: var(--primary-image-slide-width) !important;
+        /* background-color: red;
+        padding: 20px; */
+    }
+}
+
+@keyframes transitionThreeImages {
+    from{
+        margin-left: calc(var(--margin-left-third-image) - 7px);
+        /* opacity: 0; */
+        width: var(--secondaries-image-slide-width) !important;
+    }
+    to{
+        margin-left: 0px;
+        width: var(--primary-image-slide-width) !important;
+        /* background-color: red;
+        padding: 20px; */
+    }
+}
+
+@keyframes transitionFourImages {
+    from{
+        margin-left: calc(var(--margin-left-fourth-image) - 7px);
+        /* opacity: 0; */
+        width: var(--secondaries-image-slide-width) !important;
+    }
+    to{
+        margin-left: 0px;
+        width: var(--primary-image-slide-width) !important;
+        /* background-color: red;
+        padding: 20px; */
+    }
+}
+
+@keyframes transitionFiveImages {
     from{
         margin-left: calc(var(--margin-left-fifth-image) - 7px);
         /* opacity: 0; */
